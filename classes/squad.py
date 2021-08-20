@@ -38,4 +38,3 @@ class Squad:
         self.members.append(hero) \
             if hero.tendency == self.tendency \
             else print("Unable to add a hero with different tendency")
-        hero.member_of.append(self.name)
