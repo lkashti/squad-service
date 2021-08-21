@@ -33,7 +33,7 @@ class Hero:
     @tendency.setter
     def tendency(self, tendency: str) -> None:
         if tendency.lower() not in {"good", "evil"}:
-            raise ValueError("Tendency must be either good or bad")
+            raise ValueError("Tendency must be either good or evil")
         self.__tendency = tendency
 
     def is_alive(self) -> bool:
