@@ -26,8 +26,8 @@ class Squad:
 
     @tendency.setter
     def tendency(self, tendency: str) -> None:
-        if tendency.lower() not in {"good", "evil"}:
-            raise ValueError("Tendency must be either good or bad")
+        if tendency.lower() not in ("good", "evil"):
+            raise ValueError("Tendency must be either good or evil")
         self.__tendency = "good" if tendency == "good" else "evil"
 
     @property
@@ -42,12 +42,17 @@ class Squad:
     def is_in_action(self, state: bool) -> None:
         self.__is_in_action = state
 
-    def is_empty(self) -> int:
+    def is_empty(self) -> bool:
         return len(self.__heroes) == 0
 
-    def is_hero_exists(self, hero):
+    def get_hero_by_name(self, hero_name) -> Hero:
         for h in self.__heroes:
-            if h.name == hero.name:
+            if h.name == hero_name:
+                return h
+
+    def is_hero_exists(self, hero_name) -> bool:
+        for h in self.__heroes:
+            if h.name == hero_name:
                 return True
         return False
 
