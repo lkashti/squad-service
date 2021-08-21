@@ -28,11 +28,15 @@ class Squad:
     def tendency(self, tendency: str) -> None:
         if tendency.lower() not in ("good", "evil"):
             raise ValueError("Tendency must be either good or evil")
-        self.__tendency = "good" if tendency == "good" else "evil"
+        self.__tendency = tendency
 
     @property
     def heroes(self) -> list:
         return self.__heroes
+
+    @heroes.setter
+    def heroes(self, heroes):
+        self.__heroes = heroes
 
     @property
     def is_in_action(self) -> bool:

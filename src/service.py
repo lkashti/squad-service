@@ -28,7 +28,6 @@ class Service:
     def is_squad_exists(self, squad_name: str) -> bool:
         for squad in self._squads:
             if squad.name == squad_name:
-                print("exists")
                 return True
         return False
 
@@ -72,7 +71,7 @@ class Service:
                 winner = squad1
             else:
                 winner = squad2
-            print(f"{winner.name} win!")
+            print(f"{winner.name} won!")
             squad1.is_in_action, squad2.is_in_action = False, False
         else:
             print("These squads are invalid for battle")
